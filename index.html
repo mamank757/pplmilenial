@@ -1,197 +1,210 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Penyuluh Milenial Wajo</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: rgba(30, 41, 59, 0.7);
-            --accent-color: #38bdf8;
-            --text-color: #f1f5f9;
-            --neon-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Penyuluh Milenial Wajo</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        body {
-            background-color: var(--bg-color);
-            background-image: radial-gradient(circle at top right, #1e293b, #0f172a);
-            color: var(--text-color);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-        }
+<style>
+:root {
+    --bg: #020617;
+    --card: rgba(15, 23, 42, 0.6);
+    --primary: #38bdf8;
+    --text: #e2e8f0;
+}
 
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            margin-top: 20px;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        header h1 {
-            font-size: 1rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            background: linear-gradient(to right, #fff, var(--accent-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
-        }
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #0f172a, #020617);
+    overflow-x: hidden;
+}
 
-        header p {
-            color: #94a3b8;
-            font-size: 0.8rem;
-        }
+/* 🌌 Background Glow */
+body::before {
+    content: "";
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, #38bdf833, transparent);
+    top: -200px;
+    right: -200px;
+    filter: blur(120px);
+}
 
-        /* Grid Container */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            width: 100%;
-            max-width: 1000px;
-        }
+/* HEADER */
+header {
+    text-align: center;
+    padding: 40px 20px 20px;
+}
 
-        /* Menu Card Style */
-        .menu-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 30px 20px;
-            text-align: center;
-            text-decoration: none;
-            color: var(--text-color);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
+header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    background: linear-gradient(to right, #fff, #38bdf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-        .menu-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent-color);
-            box-shadow: var(--neon-shadow);
-            background: rgba(30, 41, 59, 0.9);
-        }
+header p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
 
-        .menu-card i {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: var(--accent-color);
-            text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
-        }
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
 
-        .menu-card span {
-            font-size: 1rem;
-            font-weight: 600;
-            line-height: 1.4;
-        }
+/* CARD */
+.card {
+    background: var(--card);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    padding: 25px 15px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text);
+    transition: 0.3s;
+    border: 1px solid rgba(255,255,255,0.08);
+    position: relative;
+    overflow: hidden;
+}
 
-        /* Responsive Design */
-        @media (max-width: 900px) {
-            .grid-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+/* glow hover */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    background: linear-gradient(120deg, transparent, #38bdf855, transparent);
+    opacity: 0;
+    transition: 0.3s;
+}
 
-        @media (max-width: 500px) {
-            .grid-container {
-                grid-template-columns: 1fr;
-            }
-            header h1 {
-                font-size: 1.8rem;
-            }
-            .menu-card {
-                padding: 20px;
-                flex-direction: row;
-                justify-content: flex-start;
-            }
-            .menu-card i {
-                margin-bottom: 0;
-                margin-right: 20px;
-                font-size: 1.8rem;
-                width: 40px;
-            }
-        }
+.card:hover::before {
+    opacity: 1;
+}
 
-        footer {
-            margin-top: auto;
-            padding: 40px 20px 20px;
-            color: #64748b;
-            font-size: 0.9rem;
-        }
-    </style>
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: #38bdf8;
+    box-shadow: 0 0 25px #38bdf844;
+}
+
+/* ICON */
+.card i {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px #38bdf8aa;
+}
+
+/* TEXT */
+.card span {
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* MOBILE MODE */
+@media(max-width:600px){
+    .card {
+        display: flex;
+        align-items: center;
+        text-align: left;
+        padding: 15px;
+    }
+
+    .card i {
+        margin: 0 15px 0 0;
+        font-size: 1.5rem;
+    }
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #64748b;
+    font-size: 0.8rem;
+}
+</style>
 </head>
+
 <body>
 
-    <header>
-        <h1>Penyuluh Milenial Wajo</h1>
-        <p>Digitalisasi Penyuluh Pertanian Masa Depan</p>
-    </header>
+<header>
+    <h1>Penyuluh Milenial Wajo</h1>
+    <p>Digitalisasi Penyuluh Pertanian Masa Depan</p>
+</header>
 
-    <div class="grid-container">
-        <a href="https://mamank757.github.io/milenial" class="menu-card">
-            <i class="fas fa-file-signature"></i>
-            <span>Eviden LCS</span>
-        </a>
+<div class="grid">
 
-        <a href="https://mamank757.github.io/diseminasi" class="menu-card">
-            <i class="fas fa-broadcast-tower"></i>
-            <span>Laporan Diseminasi</span>
-        </a>
+<a href="https://mamank757.github.io/milenial" class="card">
+<i class="fas fa-file-signature"></i>
+<span>Eviden LCS</span>
+</a>
 
-        <a href="https://mamank757.github.io/laporanPPL" class="menu-card">
-            <i class="fas fa-users-cog"></i>
-            <span>Laporan Pendampingan</span>
-        </a>
+<a href="https://mamank757.github.io/diseminasi" class="card">
+<i class="fas fa-broadcast-tower"></i>
+<span>Laporan Diseminasi</span>
+</a>
 
-        <a href="https://mamank757.github.io/lttpangan" class="menu-card">
-            <i class="fas fa-seedling"></i>
-            <span>Laporan LTT Pangan</span>
-        </a>
+<a href="https://mamank757.github.io/laporanPPL" class="card">
+<i class="fas fa-users-cog"></i>
+<span>Laporan Pendampingan</span>
+</a>
 
-        <a href="https://mamank757.github.io/laporanmilenial/" class="menu-card">
-            <i class="fas fa-tasks"></i>
-            <span>Laporan SKP</span>
-        </a>
+<a href="https://mamank757.github.io/lttpangan" class="card">
+<i class="fas fa-seedling"></i>
+<span>Laporan LTT Pangan</span>
+</a>
 
-        <a href="https://mamank757.github.io/iklim/" class="menu-card">
-            <i class="fas fa-cloud-sun-rain"></i>
-            <span>Iklim & Curah Hujan</span>
-        </a>
+<a href="https://mamank757.github.io/laporanmilenial/" class="card">
+<i class="fas fa-tasks"></i>
+<span>Laporan SKP</span>
+</a>
 
-        <a href="https://mamank757.github.io/analisis" class="menu-card">
-            <i class="fas fa-chart-line"></i>
-            <span>Analisis Usaha Tani</span>
-        </a>
+<a href="https://mamank757.github.io/iklim/" class="card">
+<i class="fas fa-cloud-sun-rain"></i>
+<span>Iklim & Curah Hujan</span>
+</a>
 
-        <a href="https://mamank757.github.io/dosis" class="menu-card">
-            <i class="fas fa-flask"></i>
-            <span>Dosis Pupuk Nasional</span>
-        </a>
+<a href="https://mamank757.github.io/analisis" class="card">
+<i class="fas fa-chart-line"></i>
+<span>Analisis Usaha Tani</span>
+</a>
 
-        <a href="https://mamank757.github.io/padi" class="menu-card">
-            <i class="fas fa-leaf"></i>
-            <span>Fase Pertumbuhan Padi</span>
-        </a>
-    </div>
+<a href="https://mamank757.github.io/dosis" class="card">
+<i class="fas fa-flask"></i>
+<span>Dosis Pupuk Nasional</span>
+</a>
 
-    <footer>
-        &copy; 2026 King Mamank - PPL Bola
-    </footer>
+<a href="https://mamank757.github.io/padi" class="card">
+<i class="fas fa-leaf"></i>
+<span>Fase Pertumbuhan Padi</span>
+</a>
+
+</div>
+
+<footer>
+© 2026 King Mamank - PPL Bola
+</footer>
 
 </body>
 </html>
