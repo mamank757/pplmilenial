@@ -160,17 +160,11 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-
+            position: relative;
             opacity: 0;
             transform: translateY(20px);
             animation: fadeUp 0.6s ease forwards;
         }
-
-        /* ANIMASI MASUK */
-        .card:nth-of-type(1){animation-delay:.1s}
-        .card:nth-of-type(2){animation-delay:.2s}
-        .card:nth-of-type(3){animation-delay:.3s}
-        .card:nth-of-type(4){animation-delay:.4s}
 
         @keyframes fadeUp {
             to {
@@ -199,6 +193,7 @@
                 linear-gradient(#000 0 0) content-box,
                 linear-gradient(#000 0 0);
             -webkit-mask-composite: xor;
+            -webkit-mask-composite: exclude;
             opacity: 0;
             transition: 0.3s;
         }
@@ -272,7 +267,7 @@
 </header>
 
 <div class="status-bar">
-    <div>Total Menu: 9</div>
+    <div>Total Menu: 10</div>
     <div>Status: Online</div>
 </div>
 
@@ -283,13 +278,18 @@
     </div>
 
     <a href="https://mamank757.github.io/milenial" class="card" target="_blank" rel="noopener noreferrer">
-    <i class="fas fa-file-signature"></i>
-    <span>Form Eviden LCS</span>
-</a>
+        <i class="fas fa-file-signature"></i>
+        <span>Form Eviden LCS</span>
+    </a>
 
     <a href="https://mamank757.github.io/laporanmilenial/" class="card" target="_blank" rel="noopener noreferrer">
         <i class="fas fa-tasks"></i>
-        <span>Laporan SKP</span>
+        <span>Laporan SKP Bulanan</span>
+    </a>
+
+    <a href="https://mamank757.github.io/triwulan/" class="card" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-layer-group"></i>
+        <span>Laporan SKP Triwulan (Beta)</span>
     </a>
 
     <a href="https://mamank757.github.io/lttpangan" class="card" target="_blank" rel="noopener noreferrer">
