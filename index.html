@@ -284,6 +284,11 @@ search.addEventListener("keyup", function(){
         card.style.display = text.includes(value) ? "flex" : "none";
     });
 });
+
+// Tambahkan ini di bawah kode search Bapak
+document.querySelectorAll('.card').forEach(link => {
+    link.setAttribute('target', '_blank');
+});
 </script>
 
 </body>
