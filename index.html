@@ -24,6 +24,7 @@ body{
     font-family:'Inter',sans-serif;
     background:linear-gradient(180deg,#020617,#0f172a);
     color:var(--text);
+    min-height: 100vh;
 }
 
 /* HEADER */
@@ -47,6 +48,7 @@ header p{
     max-width:500px;
     margin:20px auto;
     position:relative;
+    padding: 0 20px;
 }
 
 .search-box input{
@@ -60,7 +62,7 @@ header p{
 
 .search-box i{
     position:absolute;
-    left:12px;
+    left:32px;
     top:50%;
     transform:translateY(-50%);
     color:var(--muted);
@@ -126,9 +128,15 @@ header p{
 /* SECTION TITLE */
 .separator{
     grid-column:1/-1;
-    margin-top:20px;
-    font-size:0.8rem;
-    color:var(--muted);
+    margin-top:30px;
+    margin-bottom:10px;
+    font-size:0.85rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(34, 197, 94, 0.2);
+    padding-bottom: 5px;
 }
 
 /* FOOTER */
@@ -155,116 +163,124 @@ footer{
 
 <div class="grid" id="menu">
 
-<div class="separator">FORM LAPORAN DIGITAL</div>
+    <div class="separator">Form Laporan Digital</div>
 
-<a href="https://mamank757.github.io/milenial" class="card">
-    <i class="fas fa-file-signature"></i>
-    <span>Form Eviden LCS (Eksklusif)</span>
-    <div class="badge">VIP</div>
-</a>
+    <a href="https://mamank757.github.io/milenial" class="card">
+        <i class="fas fa-file-signature"></i>
+        <span>Form Eviden LCS (Eksklusif)</span>
+        <div class="badge">VIP</div>
+    </a>
 
+    <a href="https://mamank757.github.io/laporanmilenial/" class="card">
+        <i class="fas fa-folder"></i>
+        <span>Laporan SKP Bulanan (Eksklusif)</span>
+        <div class="badge">VIP</div>
+    </a>
 
+    <a href="https://mamank757.github.io/laporantriwulan/" class="card">
+        <i class="fas fa-folder-open"></i>
+        <span>Laporan SKP Triwulan (Eksklusif)</span>
+        <div class="badge">VIP</div>
+    </a>
 
-<a href="https://mamank757.github.io/laporanmilenial/" class="card">
-    <i class="fas fa-folder"></i>
-    <span>Laporan SKP Bulanan (Eksklusif)</span>
-    <div class="badge">VIP</div>
-</a>
+    <a href="https://mamank757.github.io/laporanPPL" class="card">
+        <i class="fas fa-users"></i>
+        <span>Laporan Pendampingan (Eksklusif)</span>
+        <div class="badge">VIP</div>
+    </a>
 
-<a href="https://mamank757.github.io/laporantriwulan/" class="card">
-    <i class="fas fa-folder-open"></i>
-    <span>Laporan SKP Triwulan (Eksklusif)</span>
-    <div class="badge">VIP</div>
-</a>
+    <a href="https://mamank757.github.io/LCS" class="card">
+        <i class="fas fa-file-alt"></i>
+        <span>Form Eviden LCS (Umum)</span>
+    </a>
 
-<a href="https://mamank757.github.io/laporanPPL" class="card">
-    <i class="fas fa-users"></i>
-    <span>Laporan Pendampingan (Eksklusif)</span>
-    <div class="badge">VIP</div>
-</a>
+    <a href="https://mamank757.github.io/triwulan" class="card">
+        <i class="fas fa-folder-open"></i>
+        <span>Laporan SKP Triwulan (Umum)</span>
+    </a>
 
-<a href="https://mamank757.github.io/LCS" class="card">
-    <i class="fas fa-file-alt"></i>
-    <span>Form Eviden LCS (Umum)</span>
-</a>
-<a href="https://mamank757.github.io/triwulan" class="card">
-    <i class="fas fa-folder-open"></i>
-    <span>Laporan SKP Triwulan (Umum)</span>
-</a>
+    <a href="https://mamank757.github.io/laporanpenyuluh" class="card">
+        <i class="fas fa-paste"></i>
+        <span>Laporan SKP Bulanan (Umum - Alt 1)</span>
+    </a>
 
-<a href="https://mamank757.github.io/laporanpenyuluh" class="card">
-    <i class="fas fa-paste"></i>
-    <span>Laporan SKP Bulanan (Umum - Alt 1)</span>
-</a>
+    <a href="https://mamank757.github.io/laporansulsel" class="card">
+        <i class="fas fa-paste"></i>
+        <span>Laporan SKP Bulanan (Umum - Alt 2)</span>
+    </a>
 
-<a href="https://mamank757.github.io/laporansulsel" class="card">
-    <i class="fas fa-paste"></i>
-    <span>Laporan SKP Bulanan (Umum - Alt 2)</span>
-</a>
+    <a href="https://mamank757.github.io/verval" class="card">
+        <i class="fas fa-industry"></i>
+        <span>Laporan Verval Pupuk</span>
+    </a>
 
-<a href="https://mamank757.github.io/verval" class="card">
-    <i class="fas fa-industry"></i>
-    <span>Laporan Verval Pupuk</span>
-</a>
+    <a href="https://mamank757.github.io/lttpangan" class="card">
+        <i class="fas fa-seedling"></i>
+        <span>Laporan LTT Pangan</span>
+    </a>
 
-<a href="https://mamank757.github.io/lttpangan" class="card">
-    <i class="fas fa-seedling"></i>
-    <span>Laporan LTT Pangan</span>
-</a>
+    <a href="https://mamank757.github.io/laporan" class="card">
+        <i class="fas fa-users"></i>
+        <span>Laporan Pendampingan (Umum)</span>
+    </a>
 
+    <a href="https://mamank757.github.io/diseminasi" class="card">
+        <i class="fas fa-chalkboard-user"></i>
+        <span>Laporan Diseminasi</span>
+    </a>
 
+    <div class="separator">Analisis dan Teknis</div>
 
-<a href="https://mamank757.github.io/laporan" class="card">
-    <i class="fas fa-users"></i>
-    <span>Laporan Pendampingan (Umum)</span>
-</a>
+    <a href="https://mamank757.github.io/analisis" class="card">
+        <i class="fas fa-chart-line"></i>
+        <span>Analisis Usaha Tani</span>
+    </a>
 
-<a href="https://mamank757.github.io/diseminasi" class="card">
-    <i class="fas fa-chalkboard-user"></i>
-    <span>Laporan Diseminasi</span>
-</a>
+    <a href="https://mamank757.github.io/padi" class="card">
+        <i class="fas fa-leaf"></i>
+        <span>Fase Pertumbuhan Padi</span>
+    </a>
 
-<div class="separator">ANALISIS & TEKNIS</div>
+   
 
-<a href="https://mamank757.github.io/iklim/" class="card">
-    <i class="fas fa-cloud-sun-rain"></i>
-    <span>Iklim & Curah Hujan</span>
-</a>
+    <a href="https://mamank757.github.io/tikus" class="card">
+        <i class="fas fa-vial"></i>
+        <span>Simulasi Pengendalian Tikus</span>
+    </a>
+    
+    
+    <a href="https://mamank757.github.io/jadwaltikus" class="card">
+        <i class="fas fa-calendar-check"></i>
+        <span>Jadwal Pengendalian Tikus</span>
+    </a>
 
-<a href="https://mamank757.github.io/analisis" class="card">
-    <i class="fas fa-chart-line"></i>
-    <span>Analisis Usaha Tani</span>
-</a>
+ <a href="https://mamank757.github.io/penggerek" class="card">
+        <i class="fas fa-bug"></i>
+        <span>Fase Penggerek Batang</span>
+    </a>
 
-<a href="https://mamank757.github.io/dosis" class="card">
-    <i class="fas fa-flask"></i>
-    <span>Dosis Pupuk Nasional</span>
-</a>
+    <a href="https://mamank757.github.io/jadwalpenggerek" class="card">
+        <i class="fas fa-calendar-alt"></i>
+        <span>Jadwal Pengendalian Penggerek</span>
+    </a>
 
-<a href="https://mamank757.github.io/padi" class="card">
-    <i class="fas fa-leaf"></i>
-    <span>Fase Pertumbuhan Padi</span>
-</a>
+    <div class="separator">Informasi</div>
 
-<a href="https://mamank757.github.io/tikus" class="card">
-    <i class="fas fa-bug"></i>
-    <span>Simulasi Serangan Tikus</span>
-</a>
+    <a href="https://mamank757.github.io/iklim/" class="card">
+        <i class="fas fa-cloud-sun-rain"></i>
+        <span>Iklim dan Curah Hujan</span>
+    </a>
 
-<a href="https://mamank757.github.io/jadwaltikus" class="card">
-    <i class="fas fa-calendar-check"></i>
-    <span>Jadwal Pengendalian Tikus</span>
-</a>
+    <a href="https://mamank757.github.io/dosis" class="card">
+        <i class="fas fa-flask"></i>
+        <span>Dosis Pupuk Nasional</span>
+    </a>
 
-<a href="https://mamank757.github.io/penggerek" class="card">
-    <i class="fas fa-worm"></i>
-    <span>Simulasi Penggerek Batang</span>
-</a>
-
-<a href="https://mamank757.github.io/jadwalpenggerek" class="card">
-    <i class="fas fa-calendar-alt"></i>
-    <span>Jadwal Pengendalian Penggerek</span>
-</a>
+    <a href="https://mamank757.github.io/varietaspadi/" class="card">
+        <i class="fas fa-seedling"></i>
+        <span>Katalog Varietas Padi</span>
+        <div class="badge" style="background:#3b82f6; color:white;">NEW</div>
+    </a>
 
 </div>
 
@@ -275,6 +291,7 @@ footer{
 <script>
 const search = document.getElementById("search");
 const cards = document.querySelectorAll(".card");
+const separators = document.querySelectorAll(".separator");
 
 search.addEventListener("keyup", function(){
     const value = this.value.toLowerCase();
@@ -283,9 +300,13 @@ search.addEventListener("keyup", function(){
         const text = card.innerText.toLowerCase();
         card.style.display = text.includes(value) ? "flex" : "none";
     });
+
+    // Sembunyikan separator jika tidak ada kartu yang tampil di bawahnya saat pencarian
+    separators.forEach(sep => {
+        sep.style.display = value === "" ? "block" : "none";
+    });
 });
 
-// Tambahkan ini di bawah kode search Bapak
 document.querySelectorAll('.card').forEach(link => {
     link.setAttribute('target', '_blank');
 });
