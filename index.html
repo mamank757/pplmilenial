@@ -1,50 +1,472 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Penyuluh Milenial Wajo</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/mamank757/laporantriwulan/99a53aa811aa2ca20fd3c0c0ba2194be56d2b5e6/Gemini_Generated_Image_o9onvjo9onvjo9on%20(1)%20(1).png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Penyuluh Milenial Wajo</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/mamank757/laporantriwulan/99a53aa811aa2ca20fd3c0c0ba2194be56d2b5e6/Gemini_Generated_Image_o9onvjo9onvjo9on%20(1)%20(1).png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* Tambahkan ini di dalam tag <style> */
+.hidden { display: none !important; }
+#ebook-content {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+:root{
+    --bg:#020617;
+    --card:rgba(255,255,255,0.06);
+    --glass:rgba(255,255,255,0.08);
+    --primary:#22c55e;
+    --accent:#4ade80;
+    --text:#e5e7eb;
+    --muted:#94a3b8;
+}
+
+/* GLOBAL */
+body{
+    font-family:'Inter',sans-serif;
+    background: radial-gradient(circle at top, #0f172a, #020617);
+    color:var(--text);
+}
+
+/* HEADER HERO */
+header{
+    padding:50px 20px 30px;
+    text-align:center;
+    background: linear-gradient(135deg, rgba(34,197,94,0.1), transparent);
+}
+
+header h1{
+    font-size:2rem;
+    font-weight:700;
+    background: linear-gradient(90deg,#22c55e,#4ade80);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+header p{
+    font-size:0.9rem;
+    color:var(--muted);
+}
+
+/* SEARCH GLASS */
+.search-box{
+    max-width:500px;
+    margin:20px auto;
+    position:relative;
+    padding:0 20px;
+}
+
+.search-box input{
+    width:100%;
+    padding:14px 15px 14px 45px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,0.08);
+    background:var(--glass);
+    backdrop-filter:blur(10px);
+    color:white;
+    transition:0.3s;
+}
+
+.search-box input:focus{
+    outline:none;
+    border-color:var(--primary);
+    box-shadow:0 0 0 2px rgba(34,197,94,0.2);
+}
+
+.search-box i{
+    position:absolute;
+    left:32px;
+    top:50%;
+    transform:translateY(-50%);
+    color:var(--muted);
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:18px;
+    padding:25px;
+    max-width:1100px;
+    margin:auto;
+}
+
+/* CARD GLASS */
+.card{
+    background:var(--card);
+    border-radius:18px;
+    padding:18px;
+    display:flex;
+    gap:15px;
+    align-items:center;
+    text-decoration:none;
+    color:white;
+    position:relative;
+    border:1px solid rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    transition:all 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.card:hover{
+    transform:translateY(-6px) scale(1.02);
+    border-color:var(--primary);
+    box-shadow:0 10px 30px rgba(34,197,94,0.2);
+}
+
+/* ICON BOX */
+.card i{
+    font-size:1.3rem;
+    color:var(--primary);
+    background:rgba(34,197,94,0.1);
+    padding:12px;
+    border-radius:12px;
+}
+
+/* TEXT */
+.card span{
+    font-size:0.9rem;
+    line-height:1.4;
+}
+
+/* BADGE */
+.badge{
+    position:absolute;
+    top:10px;
+    right:10px;
+    font-size:0.65rem;
+    padding:4px 9px;
+    border-radius:999px;
+    background:linear-gradient(135deg,#22c55e,#4ade80);
+    color:black;
+    font-weight:600;
+}
+
+/* SEPARATOR */
+.separator{
+    grid-column:1/-1;
+    margin-top:35px;
+    margin-bottom:10px;
+    font-size:0.8rem;
+    font-weight:600;
+    color:var(--accent);
+    letter-spacing:1px;
+    border-left:3px solid var(--primary);
+    padding-left:10px;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:40px 20px;
+    font-size:0.8rem;
+    color:var(--muted);
+}
+</style>
 </head>
-<body class="bg-gray-50 flex items-center justify-center min-h-screen font-sans">
 
-    <!-- Pembungkus Utama -->
-    <div class="text-center p-6 max-w-lg w-full">
+<body>
+
+<header>
+    <h1>Penyuluh Milenial Wajo</h1>
+    <p>11 Pemuda dalam Digitalisasi & Modernisasi Pertanian</p>
+</header>
+
+<div class="search-box">
+    <i class="fas fa-search"></i>
+    <input type="text" id="search" placeholder="Cari menu...">
+</div>
+
+<div class="grid" id="menu">
+
+    <div class="separator">Form Laporan Digital</div>
+
+    <a href="https://mamank757.github.io/milenial" class="card">
+        <i class="fas fa-file-signature"></i>
+        <span>Form Eviden LCS </span>
+        <div class="badge">PPL MILENIAL</div>
+    </a>
+
+    <a href="https://mamank757.github.io/laporanmilenial/" class="card">
+        <i class="fas fa-folder"></i>
+        <span>SKP Bulanan </span>
+        <div class="badge">PPL MILENIAL</div>
+    </a>
+
+    <a href="https://mamank757.github.io/laporantriwulan/" class="card">
+        <i class="fas fa-folder-open"></i>
+        <span>SKP Triwulan </span>
+        <div class="badge">PPL MILENIAL</div>
+    </a>
+
+    <a href="https://mamank757.github.io/laporanPPL" class="card">
+        <i class="fas fa-users"></i>
+        <span>Keg. Pendampingan - Bulanan/Triwulan </span>
+        <div class="badge">PPL MILENIAL</div>
+    </a>
+
+    <a href="https://mamank757.github.io/LCS" class="card">
+        <i class="fas fa-file-alt"></i>
+        <span>Form Eviden LCS</span>
+       <div class="badge" style="background:#a31f6a; color:white;">UMUM</div>
+    </a>
+    
+     <a href="https://mamank757.github.io/pdf" class="card">
+        <i class="fas fa-file-alt"></i>
+        <span>Form Eviden LCS</span>
+        <div class="badge" style="background:#3b82f6; color:white;">BPP BOLA</div>
+    </a>
+    
+    <a href="https://mamank757.github.io/tancung" class="card">
+        <i class="fas fa-file-alt"></i>
+        <span>Form Eviden LCS</span>
+       <div class="badge" style="background:#940c19; color:white;">BPP TANCUNG</div>
+    </a>
+
+<a href="https://mamank757.github.io/laporanbola" class="card">
+        <i class="fas fa-folder-open"></i>
+        <span>SKP Bulanan</span>
+         <div class="badge" style="background:#3b82f6; color:white;">BPP BOLA</div>
+    </a>
+    
+    <a href="https://mamank757.github.io/takkalalla" class="card">
+        <i class="fas fa-folder-open"></i>
+        <span>SKP Bulanan</span>
+         <div class="badge" style="background:#ba5309; color:white;">BPP TAKKALALLA</div>
+    </a>
+    
+    <a href="https://mamank757.github.io/laporanpenyuluh" class="card">
+        <i class="fas fa-paste"></i>
+        <span>SKP Bulanan</span>
+        <div class="badge" style="background:#a31f6a; color:white;">UMUM ALT 1</div>
+    </a>
+
+    <a href="https://mamank757.github.io/laporansulsel" class="card">
+        <i class="fas fa-paste"></i>
+        <span>SKP Bulanan</span>
+        <div class="badge" style="background:#a31f6a; color:white;">UMUM ALT 2</div>
+    </a>
+    
+    <a href="https://mamank757.github.io/laporanwajo" class="card">
+        <i class="fas fa-paste"></i>
+        <span>SKP Bulanan</span>
+        <div class="badge" style="background:#a31f6a; color:white;">UMUM ALT 3</div>
+    </a>
+
+<a href="https://mamank757.github.io/triwulan" class="card">
+        <i class="fas fa-folder-open"></i>
+        <span>SKP Triwulan</span>
+        <div class="badge" style="background:#a31f6a; color:white;">UMUM</div>
+    </a>
+    
+     <a href="https://mamank757.github.io/tahunan" class="card">
+        <i class="fas fa-paste"></i>
+        <span>SKP Tahunan</span>
+          <div class="badge" style="background:#a31f6a; color:white;">UMUM</div>
+    </a>
+
+ <a href="https://mamank757.github.io/diseminasi" class="card">
+        <i class="fas fa-chalkboard-user"></i>
+        <span>Diseminasi</span>
+        <div class="badge" style="background:#a31f6a; color:white;">UMUM</div>
+    </a>
+
+      <a href="https://mamank757.github.io/lttpangan" class="card">
+        <i class="fas fa-seedling"></i>
+        <span>LTT Pangan - Bulanan/Triwulan</span>
+        <div class="badge" style="background:#a31f6a; color:white;">UMUM</div>
+    </a>
+
+    <a href="https://mamank757.github.io/laporan" class="card">
+        <i class="fas fa-users"></i>
+        <span>Keg. Pendampingan - Bulanan/Triwulan</span>
+        <div class="badge" style="background:#a31f6a; color:white;">UMUM</div>
+    </a>
+
+     <a href="https://mamank757.github.io/verval" class="card">
+        <i class="fas fa-industry"></i>
+        <span>Verval Pupuk</span>
+        <div class="badge" style="background:#a31f6a; color:white;">UMUM</div>
+    </a>
+
+    <div class="separator">Analisis dan Teknis</div>
+
+    <a href="https://mamank757.github.io/analisis" class="card">
+        <i class="fas fa-chart-line"></i>
+        <span>Analisis Usaha Tani</span>
+    </a>
+
+    <a href="https://mamank757.github.io/padi" class="card">
+        <i class="fas fa-leaf"></i>
+        <span>Fase Pertumbuhan Padi</span>
+    </a>
+
+   
+
+    <a href="https://mamank757.github.io/tikus" class="card">
+        <i class="fas fa-vial"></i>
+        <span>Simulasi Pengendalian Tikus</span>
+    </a>
+    
+    
+    <a href="https://mamank757.github.io/jadwaltikus" class="card">
+        <i class="fas fa-calendar-check"></i>
+        <span>Jadwal Pengendalian Tikus</span>
+    </a>
+
+ <a href="https://mamank757.github.io/penggerek" class="card">
+        <i class="fas fa-bug"></i>
+        <span>Fase Penggerek Batang</span>
+    </a>
+
+    <a href="https://mamank757.github.io/jadwalpenggerek" class="card">
+        <i class="fas fa-calendar-alt"></i>
+        <span>Jadwal Pengendalian Penggerek</span>
+    </a>
+
+    <div class="separator">Informasi</div>
+
+    <a href="https://mamank757.github.io/iklim/" class="card">
+        <i class="fas fa-cloud-sun-rain"></i>
+        <span>Iklim dan Curah Hujan</span>
+    </a>
+
+    <a href="https://mamank757.github.io/dosis" class="card">
+        <i class="fas fa-flask"></i>
+        <span>Dosis Pupuk Nasional</span>
+    </a>
+
+    <a href="https://mamank757.github.io/varietaspadi/" class="card">
+        <i class="fas fa-seedling"></i>
+        <span>Katalog Varietas Padi v.1</span>
+        <div class="badge" style="background:#3b82f6; color:white;">NEW</div>
+    </a>
+    
+      <a href="https://mamank757.github.io/varietas/" class="card">
+        <i class="fas fa-seedling"></i>
+        <span>Katalog Varietas Padi v.2</span>
+        <div class="badge" style="background:#3b82f6; color:white;">NEW</div>
+    </a>
+
+    <a href="https://mamank757.github.io/analisisvarietas/" class="card">
+        <i class="fas fa-seedling"></i>
+        <span>Katalog Varietas Padi v.3</span>
+        <div class="badge" style="background:#3b82f6; color:white;">NEW</div>
+    </a>
+
+</div>
+
+<footer>
+    &copy; 2026 King Mamank - PPL TAHUNAN
+</footer>
+<!-- Pop-up Ebook Selalu Muncul -->
+<div id="ebook-popup" class="fixed inset-0 z-[10000] hidden flex items-center justify-center bg-slate-900/80 backdrop-blur-sm p-4">
+    <div class="bg-slate-800 border-2 border-purple-500 rounded-3xl max-w-sm w-full overflow-hidden shadow-2xl transform transition-all scale-95 opacity-0 duration-300" id="ebook-content">
         
-        <!-- Teks Informasi Atas -->
-        <h2 class="text-xl font-bold text-red-600 mb-8">
-            WEB INI DITUTUP SEMENTARA OLEH ADMIN, KARENA MINIMNYA DUKUNGAN PENGEMBANGAN APLIKASI KAMI.
-        </h2>
-
-        <!-- Logo di Tengah -->
-        <div class="flex justify-center mb-8">
-            <img src="https://play-lh.googleusercontent.com/yGVehuYQTLGRbFTA8cfzjlLtP5Y3ll1Gds3KuhGNV258tJgHwfwyTkqDdMSDH_vqi_5UvOyv-UJmJ3756D5BpQ=w480-h960" 
-                 alt="Logo Smart Farming" 
-                 class="w-32 h-32 rounded-3xl shadow-lg">
+        <!-- Kontainer Gambar yang Dikecilkan -->
+        <div class="flex justify-center pt-6 bg-slate-800">
+            <div class="relative w-40 aspect-[3/4] bg-slate-900 overflow-hidden rounded-xl shadow-lg border border-slate-700">
+                <img src="https://raw.githubusercontent.com/mamank757/laporanbola/refs/heads/main/IMG_4482.jpg" 
+                     alt="Preview Ebook" 
+                     class="w-full h-full object-cover">
+                <!-- Icon Floating kecil -->
+                <div class="absolute -bottom-2 -right-2 bg-purple-600 w-8 h-8 rounded-full flex items-center justify-center shadow-lg animate-bounce">
+                    <i class="fa-solid fa-book-open text-white text-sm"></i>
+                </div>
+            </div>
         </div>
-        <p class="text-lg text-gray-700 mb-8">
-           ANDA MASIH BISA MENGGUNAKAN FORM LCS<br>
-            <a href="https://mamank757.github.io/LCS" class="text-blue-600 font-bold hover:underline">
-                KLIK DI SINI
-            </a>
-        </p>
-        <!-- Teks Informasi Bawah -->
         
-        
-        <!-- Kontak -->
-        <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm inline-block">
-            <p class="text-lg text-gray-700 mb-8">
-            Dukung Pengujian Aplikasi Smart Farming. Download, Instal, Berikan Rating dan Ulasan!<br>
-            <a href="https://play.google.com/store/apps/details?id=co.median.android.mbdxanw" class="text-blue-600 font-bold hover:underline">
-                Klik di sini untuk buka Google Play Store
-            </a>
-        </p>
-            <p class="text-gray-600 mb-2">Jika Anda ingin mencobanya, silakan daftarkan email. Hubungi:</p>
-            <strong class="text-2xl text-green-600">WA: KING MAMANK 081354871000</strong>
+        <div class="p-6 text-center">
+            <h3 class="text-xl font-bold text-white mb-2">Aplikasi Smart Farming</h3>
+            <p class="text-slate-300 text-sm mb-6">
+                Membantu Deteksi Dini <b>"Cuaca, Penyakit Tanaman, Uji Tanah, Uji BWD, Panen"</b> digital.
+            </p>
+            
+            <div class="space-y-3">
+                <a href="https://mamank757.github.io/smartfarming/" target="_blank" onclick="closeEbookPopup()" class="block w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl transition-all active:scale-95 shadow-lg shadow-emerald-900/20">
+                    <i class="fa-solid fa-download mr-2"></i>COBA APLIKASINYA SEKARANG
+                </a>
+                <button onclick="closeEbookPopup()" class="text-slate-400 text-xs hover:text-white transition-colors underline">
+                    Saya Sudah Mencobanya
+                </button>
+            </div>
         </div>
     </div>
+</div>
+<script>
+    // ANIMASI MASUK
+const cardsUI = document.querySelectorAll(".card");
 
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = "translateY(0)";
+        }
+    });
+});
+
+cardsUI.forEach(card=>{
+    card.style.opacity = 0;
+    card.style.transform = "translateY(20px)";
+    card.style.transition = "0.5s ease";
+    observer.observe(card);
+});
+const search = document.getElementById("search");
+const cards = document.querySelectorAll(".card");
+const separators = document.querySelectorAll(".separator");
+
+search.addEventListener("keyup", function(){
+    const value = this.value.toLowerCase();
+
+    cards.forEach(card=>{
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(value) ? "flex" : "none";
+    });
+
+    // Sembunyikan separator jika tidak ada kartu yang tampil di bawahnya saat pencarian
+    separators.forEach(sep => {
+        sep.style.display = value === "" ? "block" : "none";
+    });
+});
+
+document.querySelectorAll('.card').forEach(link => {
+    link.setAttribute('target', '_blank');
+});
+
+// Fungsi untuk memunculkan Pop-up Ebook (Selalu Muncul)
+function showEbookPopup() {
+    const popup = document.getElementById('ebook-popup');
+    const content = document.getElementById('ebook-content');
+    
+    // Langsung munculkan tanpa cek localStorage
+    popup.classList.remove('hidden');
+    setTimeout(() => {
+        content.classList.remove('scale-95', 'opacity-0');
+        content.classList.add('scale-100', 'opacity-100');
+    }, 10);
+}
+
+function closeEbookPopup() {
+    const popup = document.getElementById('ebook-popup');
+    const content = document.getElementById('ebook-content');
+    
+    content.classList.remove('scale-100', 'opacity-100');
+    content.classList.add('scale-95', 'opacity-0');
+    
+    setTimeout(() => {
+        popup.classList.add('hidden');
+    }, 300);
+}
+
+// Jalankan popup 3 detik setelah halaman terbuka
+window.addEventListener('load', () => {
+    setTimeout(showEbookPopup, 1000); 
+});
+</script>
 </body>
 </html>
