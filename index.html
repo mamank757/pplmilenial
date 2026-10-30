@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-/* Tambahkan ini di dalam tag <style> */
 .hidden { display: none !important; }
 
 :root{
@@ -83,14 +82,35 @@ header p{
     color:var(--muted);
 }
 
-/* GRID */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:18px;
-    padding:25px;
-    max-width:1100px;
-    margin:auto;
+/* MENU CONTAINER & GRID SETTINGS */
+.menu-container {
+    padding: 25px;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.grid {
+    display: grid;
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+/* Grid responsif untuk HP/Tablet */
+.grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Memaksa 4 dan 3 kolom pada layar desktop */
+@media (min-width: 1024px) {
+    .grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 /* CARD GLASS */
@@ -146,9 +166,7 @@ header p{
 
 /* SEPARATOR */
 .separator{
-    grid-column:1/-1;
-    margin-top:35px;
-    margin-bottom:10px;
+    margin-bottom:15px;
     font-size:0.8rem;
     font-weight:600;
     color:var(--accent);
@@ -156,8 +174,7 @@ header p{
     border-left:3px solid var(--primary);
     padding-left:10px;
 }
-/* Menghilangkan margin atas untuk separator pertama agar terlihat rapi */
-.grid .separator:first-child {
+.menu-container .separator:first-child {
     margin-top: 0;
 }
 
@@ -183,200 +200,192 @@ footer{
     <input type="text" id="search" placeholder="Cari menu...">
 </div>
 
-<div class="grid" id="menu">
-    <!-- SEPARATOR BARU DITAMBAHKAN DI SINI -->
-    <div class="separator">Fitur </div>
- <a href="https://mamank757.github.io/bosowa" class="card">
-        <i class="fas fa-cloud"></i>
-        <span>DATA RIWAYAT CURAH HUJAN BONE, SOPPENG, WAJO, SIDRAP (sejak 1997-saat ini)</span>
-        <div class="badge">Fitur</div>
-    </a>
+<!-- CONTAINER UTAMA -->
+<div id="menu" class="menu-container">
     
- <a href="https://mamank757.github.io/proyeksi" class="card">
-        <i class="fas fa-cloud-showers-heavy"></i>
-        <span>PRAKIRAAN CURAH HUJAN WAJO (12 bulan ke depan)</span>
-        <div class="badge">Fitur</div>
-    </a>
-    
-    <a href="https://mamank757.github.io/lajurambatapi" class="card">
-        <i class="fa-solid fa-fire"></i>
-        <span>LAJU RAMBAT API DI TEMPAT ANDA</span>
-        <div class="badge">Fitur</div>
-    </a>
+    <!-- SEKSI: FITUR (4 KOLOM) -->
+    <div class="separator">Fitur</div>
+    <div class="grid grid-4">
+        <a href="https://mamank757.github.io/bosowa" class="card">
+            <i class="fas fa-cloud"></i>
+            <span>DATA RIWAYAT CURAH HUJAN BONE, SOPPENG, WAJO, SIDRAP (sejak 1997-saat ini)</span>
+            <div class="badge">Fitur</div>
+        </a>
+        <a href="https://mamank757.github.io/proyeksi" class="card">
+            <i class="fas fa-cloud-showers-heavy"></i>
+            <span>PRAKIRAAN CURAH HUJAN WAJO (12 bulan ke depan)</span>
+            <div class="badge">Fitur</div>
+        </a>
+        <a href="https://mamank757.github.io/lajurambatapi" class="card">
+            <i class="fa-solid fa-fire"></i>
+            <span>LAJU RAMBAT API DI TEMPAT ANDA</span>
+            <div class="badge">Fitur</div>
+        </a>
+        <a href="https://mamank757.github.io/peta" class="card">
+            <i class="fa-solid fa-map"></i>
+            <span>PETA CUACA DAN IKLIM INDONESIA</span>
+            <div class="badge">Fitur</div>
+        </a>
+    </div>
 
+    <!-- SEKSI: FORM LAYANAN (2 KOLOM) -->
     <div class="separator">Form Layanan</div>
-    <a href="https://mamank757.github.io/bbm" class="card">
-        <i class="fas fa-file-signature"></i>
-        <span>Form BBM Spesifikasi Alsintan Penyuluh</span>
-        <div class="badge">Umum</div>
-    </a>
-    
+    <div class="grid grid-3">
+        <a href="https://mamank757.github.io/bbm" class="card">
+            <i class="fas fa-file-signature"></i>
+            <span>Form BBM Spesifikasi Alsintan Penyuluh</span>
+            <div class="badge">Umum</div>
+        </a>
+        <a href="https://mamank757.github.io/dosis" class="card">
+            <i class="fas fa-flask"></i>
+            <span>Dosis Pupuk Nasional</span>
+        </a>
+    </div>
+
+    <!-- SEKSI: FORM LAPORAN DIGITAL (3 KOLOM) -->
     <div class="separator">Form Laporan Digital</div>
+    <div class="grid grid-3">
+        <a href="https://mamank757.github.io/milenial" class="card">
+            <i class="fas fa-file-signature"></i>
+            <span>Form Eviden LCS </span>
+            <div class="badge">PPL MILENIAL</div>
+        </a>
+        <a href="https://mamank757.github.io/laporanmilenial/" class="card">
+            <i class="fas fa-folder"></i>
+            <span>SKP Bulanan </span>
+            <div class="badge">PPL MILENIAL</div>
+        </a>
+        <a href="https://mamank757.github.io/laporantriwulan/" class="card">
+            <i class="fas fa-folder-open"></i>
+            <span>SKP Triwulan </span>
+            <div class="badge">PPL MILENIAL</div>
+        </a>
+        <a href="https://mamank757.github.io/laporanPPL" class="card">
+            <i class="fas fa-users"></i>
+            <span>Keg. Pendampingan - Bulanan/Triwulan </span>
+            <div class="badge">PPL MILENIAL</div>
+        </a>
+        <a href="https://mamank757.github.io/LCS" class="card">
+            <i class="fas fa-file-alt"></i>
+            <span>Form Eviden LCS</span>
+            <div class="badge" style="background:#a31f6a; color:white;">UMUM</div>
+        </a>
+        <a href="https://mamank757.github.io/pdf" class="card">
+            <i class="fas fa-file-alt"></i>
+            <span>Form Eviden LCS</span>
+            <div class="badge" style="background:#3b82f6; color:white;">BPP BOLA</div>
+        </a>
+        <a href="https://mamank757.github.io/tancung" class="card">
+            <i class="fas fa-file-alt"></i>
+            <span>Form Eviden LCS</span>
+            <div class="badge" style="background:#940c19; color:white;">BPP TANCUNG</div>
+        </a>
+        <a href="https://mamank757.github.io/laporanbola" class="card">
+            <i class="fas fa-folder-open"></i>
+            <span>SKP Bulanan</span>
+            <div class="badge" style="background:#3b82f6; color:white;">BPP BOLA</div>
+        </a>
+        <a href="https://mamank757.github.io/takkalalla" class="card">
+            <i class="fas fa-folder-open"></i>
+            <span>SKP Bulanan</span>
+            <div class="badge" style="background:#ba5309; color:white;">BPP TAKKALALLA</div>
+        </a>
+        <a href="https://mamank757.github.io/laporanpenyuluh" class="card">
+            <i class="fas fa-paste"></i>
+            <span>SKP Bulanan</span>
+            <div class="badge" style="background:#a31f6a; color:white;">UMUM ALT 1</div>
+        </a>
+        <a href="https://mamank757.github.io/laporansulsel" class="card">
+            <i class="fas fa-paste"></i>
+            <span>SKP Bulanan</span>
+            <div class="badge" style="background:#a31f6a; color:white;">UMUM ALT 2</div>
+        </a>
+        <a href="https://mamank757.github.io/laporanwajo" class="card">
+            <i class="fas fa-paste"></i>
+            <span>SKP Bulanan</span>
+            <div class="badge" style="background:#a31f6a; color:white;">UMUM ALT 3</div>
+        </a>
+        <a href="https://mamank757.github.io/triwulan" class="card">
+            <i class="fas fa-folder-open"></i>
+            <span>SKP Triwulan</span>
+            <div class="badge" style="background:#a31f6a; color:white;">UMUM</div>
+        </a>
+        <a href="https://mamank757.github.io/tahunan" class="card">
+            <i class="fas fa-paste"></i>
+            <span>SKP Tahunan</span>
+            <div class="badge" style="background:#a31f6a; color:white;">UMUM</div>
+        </a>
+        <a href="https://mamank757.github.io/diseminasi" class="card">
+            <i class="fas fa-chalkboard-user"></i>
+            <span>Diseminasi</span>
+            <div class="badge" style="background:#a31f6a; color:white;">UMUM</div>
+        </a>
+        <a href="https://mamank757.github.io/lttpangan" class="card">
+            <i class="fas fa-seedling"></i>
+            <span>LTT Pangan - Bulanan/Triwulan</span>
+            <div class="badge" style="background:#a31f6a; color:white;">UMUM</div>
+        </a>
+        <a href="https://mamank757.github.io/laporan" class="card">
+            <i class="fas fa-users"></i>
+            <span>Keg. Pendampingan - Bulanan/Triwulan</span>
+            <div class="badge" style="background:#a31f6a; color:white;">UMUM</div>
+        </a>
+        <a href="https://mamank757.github.io/verval" class="card">
+            <i class="fas fa-industry"></i>
+            <span>Verval Pupuk</span>
+            <div class="badge" style="background:#a31f6a; color:white;">UMUM</div>
+        </a>
+    </div>
 
-    <a href="https://mamank757.github.io/milenial" class="card">
-        <i class="fas fa-file-signature"></i>
-        <span>Form Eviden LCS </span>
-        <div class="badge">PPL MILENIAL</div>
-    </a>
-
-    <a href="https://mamank757.github.io/laporanmilenial/" class="card">
-        <i class="fas fa-folder"></i>
-        <span>SKP Bulanan </span>
-        <div class="badge">PPL MILENIAL</div>
-    </a>
-
-    <a href="https://mamank757.github.io/laporantriwulan/" class="card">
-        <i class="fas fa-folder-open"></i>
-        <span>SKP Triwulan </span>
-        <div class="badge">PPL MILENIAL</div>
-    </a>
-
-    <a href="https://mamank757.github.io/laporanPPL" class="card">
-        <i class="fas fa-users"></i>
-        <span>Keg. Pendampingan - Bulanan/Triwulan </span>
-        <div class="badge">PPL MILENIAL</div>
-    </a>
-
-    <a href="https://mamank757.github.io/LCS" class="card">
-        <i class="fas fa-file-alt"></i>
-        <span>Form Eviden LCS</span>
-       <div class="badge" style="background:#a31f6a; color:white;">UMUM</div>
-    </a>
-    
-     <a href="https://mamank757.github.io/pdf" class="card">
-        <i class="fas fa-file-alt"></i>
-        <span>Form Eviden LCS</span>
-        <div class="badge" style="background:#3b82f6; color:white;">BPP BOLA</div>
-    </a>
-    
-    <a href="https://mamank757.github.io/tancung" class="card">
-        <i class="fas fa-file-alt"></i>
-        <span>Form Eviden LCS</span>
-       <div class="badge" style="background:#940c19; color:white;">BPP TANCUNG</div>
-    </a>
-
-    <a href="https://mamank757.github.io/laporanbola" class="card">
-        <i class="fas fa-folder-open"></i>
-        <span>SKP Bulanan</span>
-         <div class="badge" style="background:#3b82f6; color:white;">BPP BOLA</div>
-    </a>
-    
-    <a href="https://mamank757.github.io/takkalalla" class="card">
-        <i class="fas fa-folder-open"></i>
-        <span>SKP Bulanan</span>
-         <div class="badge" style="background:#ba5309; color:white;">BPP TAKKALALLA</div>
-    </a>
-    
-    <a href="https://mamank757.github.io/laporanpenyuluh" class="card">
-        <i class="fas fa-paste"></i>
-        <span>SKP Bulanan</span>
-        <div class="badge" style="background:#a31f6a; color:white;">UMUM ALT 1</div>
-    </a>
-
-    <a href="https://mamank757.github.io/laporansulsel" class="card">
-        <i class="fas fa-paste"></i>
-        <span>SKP Bulanan</span>
-        <div class="badge" style="background:#a31f6a; color:white;">UMUM ALT 2</div>
-    </a>
-    
-    <a href="https://mamank757.github.io/laporanwajo" class="card">
-        <i class="fas fa-paste"></i>
-        <span>SKP Bulanan</span>
-        <div class="badge" style="background:#a31f6a; color:white;">UMUM ALT 3</div>
-    </a>
-
-    <a href="https://mamank757.github.io/triwulan" class="card">
-        <i class="fas fa-folder-open"></i>
-        <span>SKP Triwulan</span>
-        <div class="badge" style="background:#a31f6a; color:white;">UMUM</div>
-    </a>
-    
-     <a href="https://mamank757.github.io/tahunan" class="card">
-        <i class="fas fa-paste"></i>
-        <span>SKP Tahunan</span>
-          <div class="badge" style="background:#a31f6a; color:white;">UMUM</div>
-    </a>
-
-    <a href="https://mamank757.github.io/diseminasi" class="card">
-        <i class="fas fa-chalkboard-user"></i>
-        <span>Diseminasi</span>
-        <div class="badge" style="background:#a31f6a; color:white;">UMUM</div>
-    </a>
-
-      <a href="https://mamank757.github.io/lttpangan" class="card">
-        <i class="fas fa-seedling"></i>
-        <span>LTT Pangan - Bulanan/Triwulan</span>
-        <div class="badge" style="background:#a31f6a; color:white;">UMUM</div>
-    </a>
-
-    <a href="https://mamank757.github.io/laporan" class="card">
-        <i class="fas fa-users"></i>
-        <span>Keg. Pendampingan - Bulanan/Triwulan</span>
-        <div class="badge" style="background:#a31f6a; color:white;">UMUM</div>
-    </a>
-
-     <a href="https://mamank757.github.io/verval" class="card">
-        <i class="fas fa-industry"></i>
-        <span>Verval Pupuk</span>
-        <div class="badge" style="background:#a31f6a; color:white;">UMUM</div>
-    </a>
-
+    <!-- SEKSI: ANALISIS DAN TEKNIS (3 KOLOM) -->
     <div class="separator">Analisis dan Teknis</div>
+    <div class="grid grid-3">
+        <a href="https://mamank757.github.io/analisis" class="card">
+            <i class="fas fa-chart-line"></i>
+            <span>Analisis Usaha Tani</span>
+        </a>
+        <a href="https://mamank757.github.io/padi" class="card">
+            <i class="fas fa-leaf"></i>
+            <span>Fase Pertumbuhan Padi</span>
+        </a>
+        <a href="https://mamank757.github.io/tikus" class="card">
+            <i class="fas fa-vial"></i>
+            <span>Simulasi Pengendalian Tikus</span>
+        </a>
+        <a href="https://mamank757.github.io/jadwaltikus" class="card">
+            <i class="fas fa-calendar-check"></i>
+            <span>Jadwal Pengendalian Tikus</span>
+        </a>
+        <a href="https://mamank757.github.io/penggerek" class="card">
+            <i class="fas fa-bug"></i>
+            <span>Fase Penggerek Batang</span>
+        </a>
+        <a href="https://mamank757.github.io/jadwalpenggerek" class="card">
+            <i class="fas fa-calendar-alt"></i>
+            <span>Jadwal Pengendalian Penggerek</span>
+        </a>
+    </div>
 
-    <a href="https://mamank757.github.io/analisis" class="card">
-        <i class="fas fa-chart-line"></i>
-        <span>Analisis Usaha Tani</span>
-    </a>
-
-    <a href="https://mamank757.github.io/padi" class="card">
-        <i class="fas fa-leaf"></i>
-        <span>Fase Pertumbuhan Padi</span>
-    </a>
-
-    <a href="https://mamank757.github.io/tikus" class="card">
-        <i class="fas fa-vial"></i>
-        <span>Simulasi Pengendalian Tikus</span>
-    </a>
-    
-    <a href="https://mamank757.github.io/jadwaltikus" class="card">
-        <i class="fas fa-calendar-check"></i>
-        <span>Jadwal Pengendalian Tikus</span>
-    </a>
-
-    <a href="https://mamank757.github.io/penggerek" class="card">
-        <i class="fas fa-bug"></i>
-        <span>Fase Penggerek Batang</span>
-    </a>
-
-    <a href="https://mamank757.github.io/jadwalpenggerek" class="card">
-        <i class="fas fa-calendar-alt"></i>
-        <span>Jadwal Pengendalian Penggerek</span>
-    </a>
-
+    <!-- SEKSI: INFORMASI (3 KOLOM) -->
     <div class="separator">Informasi</div>
-
-       <a href="https://mamank757.github.io/dosis" class="card">
-        <i class="fas fa-flask"></i>
-        <span>Dosis Pupuk Nasional</span>
-    </a>
-
-    <a href="https://mamank757.github.io/varietaspadi/" class="card">
-        <i class="fas fa-seedling"></i>
-        <span>Katalog Varietas Padi v.1</span>
-        <div class="badge" style="background:#3b82f6; color:white;">NEW</div>
-    </a>
-    
-      <a href="https://mamank757.github.io/varietas/" class="card">
-        <i class="fas fa-seedling"></i>
-        <span>Katalog Varietas Padi v.2</span>
-        <div class="badge" style="background:#3b82f6; color:white;">NEW</div>
-    </a>
-
-    <a href="https://mamank757.github.io/analisisvarietas/" class="card">
-        <i class="fas fa-seedling"></i>
-        <span>Katalog Varietas Padi v.3</span>
-        <div class="badge" style="background:#3b82f6; color:white;">NEW</div>
-    </a>
+    <div class="grid grid-3">
+        
+        <a href="https://mamank757.github.io/varietaspadi/" class="card">
+            <i class="fas fa-seedling"></i>
+            <span>Katalog Varietas Padi v.1</span>
+            <div class="badge" style="background:#3b82f6; color:white;">NEW</div>
+        </a>
+        <a href="https://mamank757.github.io/varietas/" class="card">
+            <i class="fas fa-seedling"></i>
+            <span>Katalog Varietas Padi v.2</span>
+            <div class="badge" style="background:#3b82f6; color:white;">NEW</div>
+        </a>
+        <a href="https://mamank757.github.io/analisisvarietas/" class="card">
+            <i class="fas fa-seedling"></i>
+            <span>Katalog Varietas Padi v.3</span>
+            <div class="badge" style="background:#3b82f6; color:white;">NEW</div>
+        </a>
+    </div>
 
 </div>
 
@@ -385,7 +394,7 @@ footer{
 </footer>
 
 <script>
-    // ANIMASI MASUK
+// ANIMASI MASUK
 const cardsUI = document.querySelectorAll(".card");
 
 const observer = new IntersectionObserver(entries=>{
@@ -403,6 +412,8 @@ cardsUI.forEach(card=>{
     card.style.transition = "0.5s ease";
     observer.observe(card);
 });
+
+// FITUR PENCARIAN
 const search = document.getElementById("search");
 const cards = document.querySelectorAll(".card");
 const separators = document.querySelectorAll(".separator");
@@ -415,12 +426,13 @@ search.addEventListener("keyup", function(){
         card.style.display = text.includes(value) ? "flex" : "none";
     });
 
-    // Sembunyikan separator jika tidak ada kartu yang tampil di bawahnya saat pencarian
+    // Sembunyikan separator jika sedang mencari
     separators.forEach(sep => {
         sep.style.display = value === "" ? "block" : "none";
     });
 });
 
+// BUKA DI TAB BARU
 document.querySelectorAll('.card').forEach(link => {
     link.setAttribute('target', '_blank');
 });
